@@ -1,0 +1,46 @@
+.default-container, .form-container, .student-info, .admin-info, .info-missing {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: inline-block;
+  width:100px;
+  margin-top: 10px;
+}
+
+/* input, select {
+  padding: 6px;
+  width: 60%;
+  margin-top: 10px;
+} */
+
+button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.term{
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
