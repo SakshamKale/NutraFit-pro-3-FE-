@@ -20,11 +20,13 @@ import TueMenu from "./Pro-3/TueMenu";
 import TuesdaySchedule from "./Pro-3/TuesdaySchedule";
 import WedMenu from "./Pro-3/WedMenu";
 import WednesdaySchedule from "./Pro-3/WednesdaySchedule";
+import GlobalNotification from "./Pro-3/GlobalNotification";
 
 // import MainPage from "./Pro-3/MainPage";
 
 function App() {
  return <>
+ <GlobalNotification />
  <Default/>
  {/* <WedMenu/> */}
  {/* <TueMenu/> */}
