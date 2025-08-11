@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import './Notification.css';
+import '../context/Notification.css';
 
 export const NotificationContext = createContext();
 
@@ -38,7 +38,7 @@ export const NotificationProvider = ({ children }) => {
     const interval = setInterval(() => {
       triggerNotification(schedule[i % schedule.length]);
       i++;
-    }, 2 * 60 * 1000); // every 2 mins
+    }, 0.1 * 60 * 1000); // every 2 mins
 
     return () => clearInterval(interval);
   }, []);
