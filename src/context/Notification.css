@@ -1,0 +1,126 @@
+.custom-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 1000;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification-history {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  color: #000;
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.notification-history h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.notification-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.notification-history li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+.custom-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff8c00, #ff4e50);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  z-index: 1000;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.notification-history {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #f0f0f0;
+  color: #333;
+  width: 280px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.notification-history h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #ff4e50;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+.notification-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.notification-history li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.notification-history li:last-child {
+  border-bottom: none;
+}
+.custom-notification {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep cool gradient */
+  color: #fff;
+}
+.custom-notification {
+  background: linear-gradient(135deg, #f8ffae, #43c6ac); /* Calm minty gradient */
+  color: #000;
+}
