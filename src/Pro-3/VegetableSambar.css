@@ -1,0 +1,125 @@
+.container {
+  font-family: Calibri, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f7f7f7;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar111 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001a4d;
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.nav-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-title span {
+  color: #00bfff;
+}
+
+.hero-section {
+  background-color: #3399ff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.main-image {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.nutrition-facts {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.nutrition-facts h3 {
+  background-color: #ffe066;
+  padding: 5px;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.section-header {
+  background-color: #3399ff;
+  color: white;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.ingredients-section,
+.directions-section {
+  padding: 15px 30px;
+  background-color: white;
+}
+
+.ingredients-section ul,
+.directions-section ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.youtube-section {
+  text-align: center;
+  margin: 30px;
+}
+
+.prep-time-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  max-width: 300px;
+  margin: 30px auto;
+  background-color: #fff;
+}
+
+.prep-time-box h3 {
+  background-color: #ffe066;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  background: #001a4d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  margin: 0 10px;
+  cursor: pointer;
+}

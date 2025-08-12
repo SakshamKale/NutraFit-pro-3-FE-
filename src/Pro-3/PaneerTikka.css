@@ -1,0 +1,343 @@
+/* Global styles */
+.body1000 {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  color: #1a1a1a;
+}
+
+/* Header */
+.header-paneer {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideInTop 0.8s ease;
+}
+
+.logo-circle img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.title-pan {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.title-pan span {
+  color: #64b5f6;
+}
+
+/* hero-pan Section */
+.hero-pan {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 1s ease;
+}
+
+.hero-pan h1 {
+  font-size: 36px;
+  color: #0d47a1;
+}
+
+.hero-pan p {
+  margin: 10px 0 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.hero-pan img {
+  width: 200%;
+  max-width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-pan img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Ingredients Section */
+.ingredients {
+  padding: 40px 20px;
+  background-color: #e3f2fd;
+  animation: slideInLeft 0.8s ease;
+}
+
+.ingredients h2 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.left, .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.left ul, .right ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.prep-box, .nutrition-box {
+  background: #ffffff;
+  border: 2px solid #90caf9;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.prep-box h3, .nutrition-box h3 {
+  color: #0d47a1;
+}
+
+/* YouTube Box */
+.youtube {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.youtube img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Directions */
+.directions {
+  padding: 40px 20px;
+  background-color: #e8f5fe;
+  animation: slideInRight 0.8s ease;
+}
+
+.directions h2 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+.steps {
+  max-width: 800px;
+  margin: auto;
+}
+
+.steps h4 {
+  color: #1565c0;
+  margin-top: 20px;
+}
+
+.steps ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.steps li {
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.steps li:hover {
+  color: #0d47a1;
+  transform: translateX(5px);
+}
+
+/* Footer */
+footer {
+  background-color: #0d47a1;
+  color: white;
+  padding: 20px 30px;
+  animation: slideInBottom 0.8s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.brand span {
+  color: #64b5f6;
+}
+
+.socials img {
+  width: 30px;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInTop {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInBottom {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.youtube iframe {
+  border-radius: 12px;
+  max-width: 100%;
+  height: 800px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column;
+}
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(55, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.back-icon {
+  font-size: 1.2rem;
+}
+/* Enhanced Box Hover */
+.prep-box:hover, .nutrition-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+/* Underline animation on section titles */
+.ingredients h2::after,
+.directions h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #64b5f6;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  animation: slideInUnderline 1s ease;
+}
+
+@keyframes slideInUnderline {
+  from { width: 0; opacity: 0; }
+  to { width: 60px; opacity: 1; }
+}
+
+/* Subtle pulsing on page title */
+.title-pan {
+  animation: pulseTitle 3s infinite;
+}
+
+@keyframes pulseTitle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Animated list appearance */
+.steps li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeList 0.6s ease forwards;
+}
+
+.steps li:nth-child(1) { animation-delay: 0.2s; }
+.steps li:nth-child(2) { animation-delay: 0.4s; }
+.steps li:nth-child(3) { animation-delay: 0.6s; }
+.steps li:nth-child(4) { animation-delay: 0.8s; }
+.steps li:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeList {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Social icon bounce */
+.socials img:hover {
+  animation: bounceIcon 0.6s ease;
+}
+
+@keyframes bounceIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Ingredients section slide-in delay */
+.left ul li, .right ul li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInIngredients 0.5s ease forwards;
+}
+
+.left ul li:nth-child(1),
+.right ul li:nth-child(1) { animation-delay: 0.2s; }
+.left ul li:nth-child(2),
+.right ul li:nth-child(2) { animation-delay: 0.4s; }
+.left ul li:nth-child(3),
+.right ul li:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideInIngredients {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
