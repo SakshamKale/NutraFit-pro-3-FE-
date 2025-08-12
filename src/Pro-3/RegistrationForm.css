@@ -4,7 +4,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.reg-left {
+.reg-left { 
   background: linear-gradient(to bottom right, #3D80FC, #0057D9);
   color: white;
   width: 40%;
@@ -166,7 +166,7 @@ input:focus {
 }
 
 .highlight {
-  color:#3d80fc;
+  color:#0656eb;
 }
 
 .reg-quote h2 {

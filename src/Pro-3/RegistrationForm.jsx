@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
 
         </div>
         <div className="reg-quote fade-in-left">
-          <h2>Registration <span className="highlight">Form</span></h2>
+          <h2>Registration <span className="highlight" style={{color:"#ffffffff"}}>Form</span></h2>
           <p>"Fuel your body, elevate your life."</p>
         </div>
         <div className="reg-socials">
