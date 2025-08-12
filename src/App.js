@@ -9,7 +9,7 @@ import CommonForm from "./CommonForm";
 import CheckBox from "./component/CheckBox";
 
 
-import Default from "../Pro-3/Main";
+import Default from "./Pro-3/Main";
 
 import GlobalNotification from "./Pro-3/GlobalNotification";
 
