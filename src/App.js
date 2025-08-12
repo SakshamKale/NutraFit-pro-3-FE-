@@ -5,8 +5,6 @@
 // import { UseState2 } from "./Hooks/UseState2";
 // import RegistrationForm from "./RegistrationForm";
 
-import CommonForm from "./CommonForm";
-import CheckBox from "./component/CheckBox";
 
 
 import Default from "./Pro-3/Main";
