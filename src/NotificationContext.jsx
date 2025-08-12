@@ -39,7 +39,7 @@ export const NotificationProvider = ({ children }) => {
     const interval = setInterval(() => {
       triggerNotification(schedule[i % schedule.length]);
       i++;
-    }, 3 * 60 * 1000); // every 2 mins
+    }, 2 * 60 * 1000); // every 2 mins
 
     return () => clearInterval(interval);
   }, []);
