@@ -121,7 +121,7 @@ const handleImageUpload = (e) => {
 
       <nav className="navbar">
         <span onClick={()=>{nav('/home')}}>Home</span>
-        <span onClick={()=>{nav('/vegsam')}}>Food Diary</span>
+        <span onClick={()=>{nav('/recMenu')}}>Food Diary</span>
         <span onClick={()=>{nav('/monday')}}>Workout Plans</span>
         <span onClick={()=>{nav('/nutrafitchat')}}>AI Coach</span>
         <span onClick={()=>{nav('/Cc')}}>Calorie Counter</span>
