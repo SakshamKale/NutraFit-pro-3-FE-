@@ -20,7 +20,7 @@ import SignUppr3 from './SignUppr3';
 import NutraFitChat from './NutraFitChat';
 import RegistrationForm from './RegistrationForm';
 import Cc from './Cc.jsx';
-import NutraFitRecipes from './RecepieMenu';
+import NutraFitRecipes from './RecepieMenu.jsx'
 import VegetableSambar from './VegSambar';
 import PaneerTikka from './PaneerTika';
 import Rajma from './RajmaRecepie';
