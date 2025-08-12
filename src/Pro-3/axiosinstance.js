@@ -1,9 +1,9 @@
-import axios from 'axios';
-const userApi = axios.create({
-  baseURL: 'http://localhost:5000/data'  // ✅ Correct key
-});
+  import axios from 'axios';
+  const userApi = axios.create({
+    baseURL: 'https://nutrafit-pro-3-backend.onrender.com/data'  // ✅ Correct key
+  });
 
 
-export default userApi;
+  export default userApi;
 
 
