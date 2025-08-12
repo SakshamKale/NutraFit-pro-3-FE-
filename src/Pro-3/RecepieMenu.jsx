@@ -3,7 +3,7 @@ import './NutraFitRecipes.css';
 
 import { useNavigate } from 'react-router';
 import logo from './Screenshot 2025-06-30 221420.jpg';
-import { useNotifications } from './NotificationContext';
+import { useNotifications } from '../context/NotificationContext';
 import userApi2  from './axiosinstance2';
 import vsimg from './img/vegetable-sambar-01.jpg'
 import PTimg from './img/PaneerTikka.jpg'

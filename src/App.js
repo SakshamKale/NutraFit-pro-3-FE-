@@ -11,12 +11,15 @@ import Default from "./Pro-3/Main";
 
 import GlobalNotification from "./Pro-3/GlobalNotification";
 
+
 // import MainPage from "./Pro-3/MainPage";
 
 function App() {
  return <>
  <GlobalNotification />
+
  <Default/>
+
  {/* <WedMenu/> */}
  {/* <TueMenu/> */}
  {/* <MonMenu/> */}
