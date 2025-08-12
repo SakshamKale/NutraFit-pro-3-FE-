@@ -16,7 +16,7 @@ app.post('/api/chat', async (req, res) => {
 
   try {
     const response = await axios.post(
-      'https://nutrafit-pro-3-backend.onrender.com//api.groq.com/openai/v1/chat/completions',
+      'https://api.groq.com/openai/v1/chat/completions',
       {
         model: 'llama3-70b-8192',
         messages,
