@@ -71,7 +71,19 @@ const handleImageUpload = (e) => {
       setIsTyping(false);
     }
   };
-
+const goToTodaySchedule = () => {
+  const dayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
+  const dayRoutes = [
+    '/sunday',   // 0
+    '/monday',   // 1
+    '/tuesday',  // 2
+    '/wednesday',// 3
+    '/thursday', // 4
+    '/friday',   // 5
+    '/saturday', // 6
+  ];
+  nav2(dayRoutes[dayIndex]);
+};
   return (
     <div className="app">
       <header className="header">
@@ -103,7 +115,7 @@ const handleImageUpload = (e) => {
       <nav className="navbar">
         <span onClick={() => nav2('/home')}>Home</span>
         <span onClick={() => nav2('/recMenu')}>Food Diary</span>
-        <span onClick={() => nav2('/monday')}>Workout Plans</span>
+        <span onClick={goToTodaySchedule}>Workout Plans</span>
         <span onClick={() => nav2('/nutrafitchat')}>AI Coach</span>
         <span onClick={() => nav2('/Cc')}>Calorie Counter</span>
       </nav>

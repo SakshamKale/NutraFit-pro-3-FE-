@@ -1,24 +1,17 @@
 import React from 'react';
-import './PaneerTikka.css'
+import './PaneerTikka.css'; // Shared CSS
 
 import logo from './Screenshot 2025-06-30 221420.jpg';
-
-import PTimg from './img/PaneerTikka.jpg'
+import ragiImg from '../REC/2.jpeg';
 import { useNavigate } from 'react-router';
-// import youtubeIcon from './img/youtube.png';
-// import instagramIcon from './img/instagram.svg';
-// import youtubeSvg from './img/youtube.svg';
-// import facebookIcon from './img/facebook.svg';
-// import linkedinIcon from './img/linkedin.svg';
 
-
-const PaneerTikka = () => {
-  const navigate1=useNavigate();
+const RagiDosa = () => {
+  const navigate1 = useNavigate();
   return (
     <div className='body1000'>
       {/* Header */}
       <header className="header-paneer">
-        <span className="plan-btn"  onClick={() => navigate1('/recMenu')}>⮘ Back</span> 
+        <span className="plan-btn" onClick={() => navigate1('/recMenu')}>⮘ Back</span> 
         <div className="logo-circle">
           <img src={logo} alt="NutraFit Logo" />
         </div>
@@ -29,9 +22,9 @@ const PaneerTikka = () => {
 
       {/* Hero */}
       <section className="hero-pan">
-        <h1>Paneer Tikka</h1>
-        <p>Here’s a complete breakdown of Paneer Tikka</p>
-        <img src={PTimg} alt="Paneer Tikka" />
+        <h1>RAGI DOSA</h1>
+        <p>A nutritious South Indian dosa made with ragi flour, rich in calcium and fiber.</p>
+        <img src={ragiImg} alt="Ragi Dosa" />
       </section>
 
       {/* Ingredients Section */}
@@ -39,42 +32,44 @@ const PaneerTikka = () => {
         <h2>Ingredients</h2>
         <div className="content">
           <div className="left">
-            <p><strong>For the marinade:</strong></p>
+            <p><strong>For Ragi Dosa Batter:</strong></p>
             <ul>
-              <li>½ cup thick curd (yogurt)</li>
-              <li>1 tsp red chili powder</li>
-              <li>½ tsp turmeric</li>
-              <li>½ tsp garam masala</li>
-              <li>½ tsp kasuri methi</li>
-              <li>½ tsp chaat masala</li>
-              <li>1 tsp ginger-garlic paste</li>
-              <li>¼ tsp ajwain</li>
-              <li>2 tsp roasted besan</li>
-              <li>1 tbsp lemon juice</li>
+              <li>1 cup Ragi (finger millet) flour</li>
+              <li>½ cup Rice flour</li>
+              <li>¼ cup Semolina (sooji/rava)</li>
+              <li>1 cup Curd (slightly sour)</li>
+              <li>1–1.5 cups Water (as needed)</li>
               <li>Salt to taste</li>
-              <li>3 tsp oil</li>
             </ul>
-            <p><strong>For the tikka:</strong></p>
+
+            <p><strong>Optional Add-ins:</strong></p>
             <ul>
-              <li>½ onion (petals)</li>
-              <li>½ capsicum (red & green)</li>
-              <li>5 cubes paneer</li>
+              <li>1 small Onion, finely chopped</li>
+              <li>1–2 Green chilies, finely chopped</li>
+              <li>Fresh coriander leaves, chopped</li>
+            </ul>
+
+            <p><strong>For Cooking:</strong></p>
+            <ul>
+              <li>Oil or ghee for greasing</li>
             </ul>
           </div>
+
           <div className="right">
             <div className="prep-box">
               <h3>Prep Time</h3>
-              <p><strong>15–20 minutes</strong><br />Preparation</p>
-              <p><strong>25–30 minutes</strong><br />Cooking Time</p>
-              <p><strong>~45 minutes</strong><br />Total Time</p>
+              <p><strong>10 minutes</strong><br />Preparation</p>
+              <p><strong>15 minutes</strong><br />Cooking Time</p>
+              <p><strong>~25 minutes</strong><br />Total Time</p>
             </div>
+
             <div className="nutrition-box">
-              <h3>Nutrition Facts <span>(per 1 cup serving, approx.)</span></h3>
-              <p><strong>180 kcal</strong> Calories</p>
-              <p><strong>9g</strong> Protein</p>
-              <p><strong>28g</strong> Carbs</p>
-              <p><strong>6g</strong> Fat</p>
-              <p><strong>7g</strong> Fiber</p>
+              <h3>Nutrition Facts <span>(per dosa, approx.)</span></h3>
+              <p><strong>110 kcal</strong> Calories</p>
+              <p><strong>3g</strong> Protein</p>
+              <p><strong>22g</strong> Carbs</p>
+              <p><strong>2g</strong> Fat</p>
+              <p><strong>3g</strong> Fiber</p>
             </div>
           </div>
         </div>
@@ -82,55 +77,41 @@ const PaneerTikka = () => {
 
       {/* YouTube */}
       <div className="youtube">
-    
-  <iframe
-    width="100%"
-    height="315"
-    src="https://www.youtube.com/embed/c-oVDb-O2Q8"
-    title="Paneer Tikka Recipe"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-</div>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/jEOtna3oZLo?si=qNPAFT9h-OV9B6ay"
+          title="Ragi Dosa Recipe by Ranveer Brar"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
 
       {/* Directions */}
       <section className="directions">
         <h2>Directions</h2>
         <div className="steps">
-          <h4>Make the Marinade</h4>
+          <h4>Prepare the Batter</h4>
           <ul>
-            <li>In a bowl, whisk together thick curd (yogurt) with spices like red chili powder, turmeric, garam masala, coriander powder, kasuri methi, chaat masala, ginger-garlic paste, lemon juice, and salt.</li>
-            <li><strong>Optional:</strong> Add roasted besan (gram flour) and a touch of mustard oil for that authentic smoky flavor.</li>
+            <li>In a mixing bowl, combine ragi flour, rice flour, semolina, curd, and salt.</li>
+            <li>Add water gradually to make a smooth, flowing batter. Rest for 10–15 minutes.</li>
           </ul>
 
-          <h4>Add Paneer & Veggies</h4>
+          <h4>Add Vegetables (Optional)</h4>
           <ul>
-            <li>Toss in cubes of paneer, onion petals, and bell peppers (red/green).</li>
-            <li>Mix gently to coat everything evenly.</li>
+            <li>Mix in onion, green chili, and coriander if you like a masala-style dosa.</li>
           </ul>
 
-          <h4>Marinate</h4>
+          <h4>Cook the Dosa</h4>
           <ul>
-            <li>Cover and refrigerate for at least 30 minutes. For deeper flavor, marinate for 2–4 hours.</li>
-          </ul>
-
-          <h4>Skewer</h4>
-          <ul>
-            <li>Thread paneer and veggies alternately onto skewers. Or cook directly on pan or air fryer.</li>
-          </ul>
-
-          <h4>Cook</h4>
-          <ul>
-            <li><strong>Tawa:</strong> Cook on medium heat with a little oil.</li>
-            <li><strong>Oven:</strong> 230°C (450°F), bake 10 mins + broil 2–3 mins.</li>
-            <li><strong>Air Fryer:</strong> 200°C (390°F) for 5 mins, brush and cook 2 more mins.</li>
+            <li>Heat a non-stick tawa, lightly grease it. Pour batter and spread thin in a circular motion.</li>
+            <li>Cook on medium flame until crisp, flip if desired for extra cooking.</li>
           </ul>
 
           <h4>Serve</h4>
           <ul>
-            <li>Sprinkle with chaat masala and lemon juice.</li>
-            <li>Pair with mint chutney, onion rings, and lemon wedges.</li>
+            <li>Serve hot with coconut chutney and sambar.</li>
           </ul>
         </div>
       </section>
@@ -143,10 +124,7 @@ const PaneerTikka = () => {
             <p>Nutrition tracking for real life.</p>
           </div>
           <div className="socials">
-            {/* <img src={} alt="Instagram" />
-            <img src={} alt="YouTube" />
-            <img src={} alt="Facebook" />
-            <img src={} alt="LinkedIn" /> */}
+            {/* Icons can go here if needed */}
           </div>
         </div>
       </footer>
@@ -154,4 +132,4 @@ const PaneerTikka = () => {
   );
 };
 
-export default PaneerTikka;
+export default RagiDosa;

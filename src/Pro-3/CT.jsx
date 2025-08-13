@@ -1,17 +1,17 @@
-// ChickenTikka.jsx
 import React from 'react';
-import './PaneerTikka.css';
+import './PaneerTikka.css'; // Shared CSS
 
 import logo from './Screenshot 2025-06-30 221420.jpg';
-import CTimg  from './img/CT.jpg'
+import gingerChickenImg from '../REC/6.jpeg'; // Add this image
 import { useNavigate } from 'react-router';
 
-const ChickenTikka = () => {
-  const navigate1=useNavigate();
+const GingerChicken = () => {
+  const navigate1 = useNavigate();
   return (
     <div className='body1000'>
+      {/* Header */}
       <header className="header-paneer">
-        <span className="plan-btn"  onClick={() => navigate1('/recMenu')}>⮘ Back</span> 
+        <span className="plan-btn" onClick={() => navigate1('/recMenu')}>⮘ Back</span>
         <div className="logo-circle">
           <img src={logo} alt="NutraFit Logo" />
         </div>
@@ -20,86 +20,88 @@ const ChickenTikka = () => {
         </div>
       </header>
 
+      {/* Hero */}
       <section className="hero-pan">
-        <h1>Chicken Tikka</h1>
-        <p>Here’s a complete breakdown of Chicken Tikka</p>
-        <img src={CTimg} alt="Chicken Tikka" />
+        <h1>GINGER CHICKEN</h1>
+        <p>A flavorful and protein-rich Indian dish where chicken is cooked with fresh ginger and aromatic spices.</p>
+        <img src={gingerChickenImg} alt="Ginger Chicken" />
       </section>
 
+      {/* Ingredients Section */}
       <section className="ingredients">
         <h2>Ingredients</h2>
         <div className="content">
           <div className="left">
+            <p><strong>For Ginger Chicken:</strong></p>
             <ul>
-              <li>500g boneless chicken (cut into cubes)</li>
-              <li>1/2 cup thick yogurt</li>
-              <li>1 tbsp ginger-garlic paste</li>
-              <li>1 tsp red chili powder</li>
-              <li>1/2 tsp turmeric powder</li>
-              <li>1 tsp garam masala</li>
-              <li>1 tsp cumin powder</li>
-              <li>1 tsp coriander powder</li>
-              <li>1 tbsp lemon juice</li>
-              <li>1 tbsp oil</li>
+              <li>200g Boneless chicken, cut into pieces</li>
+              <li>2 tbsp Ginger, julienned</li>
+              <li>1 medium Onion, finely chopped</li>
+              <li>1 medium Tomato, pureed</li>
+              <li>1 tsp Turmeric powder</li>
+              <li>1 tsp Red chili powder</li>
+              <li>1 tsp Coriander powder</li>
+              <li>1 tsp Oil</li>
               <li>Salt to taste</li>
-              <li>Chaat masala for garnish</li>
-              <li>Fresh coriander & onion rings (for serving)</li>
+              <li>Fresh coriander for garnish</li>
             </ul>
           </div>
           <div className="right">
             <div className="prep-box">
               <h3>Prep Time</h3>
-              <p><strong>15 minutes</strong><br />Preparation</p>
-              <p><strong>20 minutes</strong><br />Cooking Time</p>
-              <p><strong>~35 minutes</strong><br />Total Time</p>
+              <p><strong>10 minutes</strong><br />Preparation</p>
+              <p><strong>15 minutes</strong><br />Cooking Time</p>
+              <p><strong>~25 minutes</strong><br />Total Time</p>
             </div>
             <div className="nutrition-box">
-              <h3>Nutrition Facts <span>(per serving approx.)</span></h3>
-              <p><strong>290 kcal</strong> Calories</p>
-              <p><strong>30g</strong> Protein</p>
-              <p><strong>6g</strong> Carbs</p>
-              <p><strong>16g</strong> Fat</p>
+              <h3>Nutrition Facts <span>(per serving, approx.)</span></h3>
+              <p><strong>230 kcal</strong> Calories</p>
+              <p><strong>28g</strong> Protein</p>
+              <p><strong>3g</strong> Carbs</p>
+              <p><strong>12g</strong> Fat</p>
               <p><strong>2g</strong> Fiber</p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* YouTube */}
       <div className="youtube">
         <iframe
           width="100%"
           height="315"
-          src="https://www.youtube.com/embed/VhijkWkuSKo?si=dXghwt5Az_zWQMWe"
-          title="Chicken Tikka Recipe"
+          src="https://www.youtube.com/embed/aezzSLKGN8A?si=y9O0X5JXKMdViF2d" // Replace with actual video if available
+          title="Ginger Chicken – Ranveer Brar"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
 
+      {/* Directions */}
       <section className="directions">
         <h2>Directions</h2>
         <div className="steps">
-          <h4>Marinate Chicken</h4>
+          <h4>Prepare Masala</h4>
           <ul>
-            <li>In a bowl, mix yogurt, lemon juice, ginger-garlic paste, and all spices.</li>
-            <li>Add chicken pieces and coat well. Marinate for at least 1 hour (overnight preferred).</li>
+            <li>Heat oil in a pan. Sauté onions until golden.</li>
+            <li>Add turmeric, red chili powder, coriander powder, and ginger. Cook for 1–2 minutes.</li>
+            <li>Add tomato puree and cook until oil separates.</li>
           </ul>
 
           <h4>Cook Chicken</h4>
           <ul>
-            <li>Preheat grill, oven, or tawa. Drizzle some oil on top of marinated chicken.</li>
-            <li>Cook the chicken till charred and fully cooked, turning occasionally.</li>
+            <li>Add chicken pieces and salt. Cook on medium heat for 10–12 minutes until chicken is fully cooked.</li>
           </ul>
 
-          <h4>Serve</h4>
+          <h4>Garnish & Serve</h4>
           <ul>
-            <li>Sprinkle chaat masala on top.</li>
-            <li>Serve hot with green chutney, onion rings, and lemon wedges.</li>
+            <li>Garnish with fresh coriander. Serve hot with steamed rice or roti.</li>
           </ul>
         </div>
       </section>
 
+      {/* Footer */}
       <footer>
         <div className="footer-content">
           <div className="brand">
@@ -107,7 +109,7 @@ const ChickenTikka = () => {
             <p>Nutrition tracking for real life.</p>
           </div>
           <div className="socials">
-            {/* Icons if needed */}
+            {/* Icons can go here if needed */}
           </div>
         </div>
       </footer>
@@ -115,4 +117,4 @@ const ChickenTikka = () => {
   );
 };
 
-export default ChickenTikka;
+export default GingerChicken;

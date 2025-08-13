@@ -16,22 +16,23 @@ import userApi2  from './axiosinstance2';
 const Cc = () => {
   
 const product = { 
-  Eggs:    { name: 'Eggs', carbs: 0.01, protein: 0.063, fats: 0.053, cal: 0.78, unit: 'pcs' },  // per 1 egg
-  Oats:    { name: 'Oats', carbs: 0.27, protein: 0.05, fats: 0.03, cal: 1.5, unit: 'g' },       // per 1g
-  Panner:  { name: 'Panner', carbs: 0.04, protein: 0.18, fats: 0.22, cal: 2.65, unit: 'g' },
-  Soya:    { name: 'Soya', carbs: 0.09, protein: 0.17, fats: 0.06, cal: 1.72, unit: 'g' },
-  Milk:    { name: 'Milk', carbs: 0.12, protein: 0.08, fats: 0.05, cal: 1.03, unit: 'g' },
-  Bread:   { name: 'Bread', carbs: 0.13, protein: 0.03, fats: 0.01, cal: 0.7, unit: 'pcs' },
-  Banana:  { name: 'Banana', carbs: 0.27, protein: 0.013, fats: 0.003, cal: 1.05, unit: 'g' },
-  Rice:    { name: 'Rice', carbs: 0.45, protein: 0.042, fats: 0.004, cal: 2.05, unit: 'g' },
-  Dal:     { name: 'Dal', carbs: 0.20, protein: 0.09, fats: 0.03, cal: 1.70, unit: 'g' },
-  Chicken: { name: 'Chicken', carbs: 0, protein: 0.27, fats: 0.036, cal: 1.65, unit: 'g' },
-  Roti:    { name: 'Roti', carbs: 18 / 40, protein: 3 / 40, fats: 1 / 40, cal: 90 / 40, unit: 'pcs' },  // Assuming avg roti 40g
-  Chapati: { name: 'Chapati', carbs: 18 / 40, protein: 3.5 / 40, fats: 1 / 40, cal: 90 / 40, unit: 'pcs' },
-  Salad:   { name: 'Salad', carbs: 0.10, protein: 0.01, fats: 0.002, cal: 0.40, unit: 'g' },
-  Curd:    { name: 'Curd', carbs: 0.047, protein: 0.035, fats: 0.03, cal: 0.60, unit: 'g' },
-  Soup:    { name: 'Soup', carbs: 0.08, protein: 0.02, fats: 0.015, cal: 0.50, unit: 'g' },
+  Eggs:    { name: 'Eggs', carbs: 0.4, protein: 6.3, fats: 5.3, cal: 68, unit: 'pcs' }, // 1 egg (~50g)
+  Oats:    { name: 'Oats', carbs: 0.66, protein: 0.17, fats: 0.07, cal: 3.89, unit: 'g' }, // raw oats
+  Panner:  { name: 'Paneer', carbs: 0.018, protein: 0.18, fats: 0.20, cal: 2.65, unit: 'g' }, // per gram
+  Soya:    { name: 'Soya', carbs: 0.30, protein: 0.36, fats: 0.20, cal: 4.46, unit: 'g' }, // defatted soy chunks
+  Milk:    { name: 'Milk', carbs: 0.05, protein: 0.033, fats: 0.038, cal: 0.64, unit: 'g' }, // whole milk
+  Bread:   { name: 'Bread', carbs: 12, protein: 2.5, fats: 1, cal: 66, unit: 'pcs' }, // 1 medium slice ~25g
+  Banana:  { name: 'Banana', carbs: 0.23, protein: 0.011, fats: 0.003, cal: 0.89, unit: 'g' },
+  Rice:    { name: 'Rice', carbs: 0.28, protein: 0.026, fats: 0.003, cal: 1.30, unit: 'g' }, // raw rice
+  Dal:     { name: 'Dal', carbs: 0.20, protein: 0.09, fats: 0.03, cal: 1.70, unit: 'g' }, // dry dal/lentils
+  Chicken: { name: 'Chicken', carbs: 0, protein: 0.31, fats: 0.036, cal: 1.65, unit: 'g' }, // cooked chicken breast
+  Roti:    { name: 'Roti', carbs: 18, protein: 3, fats: 1, cal: 90, unit: 'pcs' }, // avg 40g roti
+  Chapati: { name: 'Chapati', carbs: 18, protein: 3.5, fats: 1, cal: 90, unit: 'pcs' }, // avg 40g chapati
+  Salad:   { name: 'Salad', carbs: 0.04, protein: 0.01, fats: 0.002, cal: 0.20, unit: 'g' }, // mixed raw veg avg
+  Curd:    { name: 'Curd', carbs: 0.036, protein: 0.035, fats: 0.038, cal: 0.61, unit: 'g' }, // whole milk curd
+  Soup:    { name: 'Soup', carbs: 0.01, protein: 0.005, fats: 0.003, cal: 0.05, unit: 'g' }, // clear veg soup
 };
+
 
 
 const recipeMap = {
@@ -85,7 +86,19 @@ useEffect(() => {
 
   fetchData();
 }, []);
-
+const goToTodaySchedule = () => {
+  const dayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
+  const dayRoutes = [
+    '/sunday',   // 0
+    '/monday',   // 1
+    '/tuesday',  // 2
+    '/wednesday',// 3
+    '/thursday', // 4
+    '/friday',   // 5
+    '/saturday', // 6
+  ];
+  nav1(dayRoutes[dayIndex]);
+};
 
 const handleImageUpload = (e) => {
   const file = e.target.files[0];
@@ -131,18 +144,42 @@ const hClick = (food) => {
   }));
 };
 
-  const getBarWidth = (value, max) => `${Math.min((value / max) * 100, 100)}%`;
+  const getBarWidth = (value, max) => {
+  if (value <= 0) return '0%';
+  if (value >= max) return '100%';
+  return `${(value / max) * 100}%`;
+};
+
+const getMacroLabel = (value, max, unit = 'g') => {
+  if (value > max) {
+    return `+${(value - max).toFixed(1)} ${unit} over`;
+  }
+  return `${value.toFixed(1)} / ${max} ${unit}`;
+};
+
 
 let nav1 = useNavigate();
 useEffect(() => {
-  const selectedData = JSON.parse(localStorage.getItem('selectedData1')) || [];
+  const dayIndex = new Date().getDay(); // 0 = Sunday ... 6 = Saturday
+  const dayKeyMap = {
+    0: "selectedData7", // Sunday
+    1: "selectedData1", // Monday
+    2: "selectedData2", // Tuesday
+    3: "selectedData3", // Wednesday
+    4: "selectedData4", // Thursday
+    5: "selectedData5", // Friday
+    6: "selectedData6"  // Saturday
+  };
+
+  const storageKey = dayKeyMap[dayIndex];
+  const selectedData = JSON.parse(localStorage.getItem(storageKey)) || [];
 
   let newTotals = { carbs: 0, protein: 0, fats: 0, cal: 0 };
   let newMealData = { bf: [], lun: [], din: [] };
 
   selectedData.forEach((section) => {
     const ingredients = recipeMap[section.text];
-    const mealType = section.meal || 'bf';  // fallback to 'bf'
+    const mealType = section.meal || 'bf';
 
     if (!ingredients) return;
 
@@ -151,11 +188,10 @@ useEffect(() => {
       if (!data) return;
 
       newMealData[mealType].push({
-  name: food,
-  base: product[food],
-  quantity: 1
-});
-
+        name: food,
+        base: product[food],
+        quantity: 1
+      });
 
       newTotals.carbs += data.carbs;
       newTotals.protein += data.protein;
@@ -242,6 +278,11 @@ useEffect(() => {
   localStorage.setItem('totalCalories', totals.cal);
 }, [totals.cal]);
 
+const limitMessages = [];
+if (totals.carbs > goal.carbs) limitMessages.push(`You’ve exceeded your carbs goal by ${(totals.carbs - goal.carbs).toFixed(1)}g`);
+if (totals.protein > goal.protein) limitMessages.push(`You’ve exceeded your protein goal by ${(totals.protein - goal.protein).toFixed(1)}g`);
+if (totals.fats > goal.fats) limitMessages.push(`You’ve exceeded your fats goal by ${(totals.fats - goal.fats).toFixed(1)}g`);
+if (totals.cal > goal.cal) limitMessages.push(`You’ve exceeded your calorie goal by ${(totals.cal - goal.cal).toFixed(1)} kcal`);
 
   return (
     <div className='body'>
@@ -271,7 +312,7 @@ useEffect(() => {
             <nav className="navbar">
               <span onClick={()=>{nav1('/home')}}>Home</span>
               <span onClick={()=>{nav1('/recMenu')}}>Food Diary</span>
-              <span onClick={()=>{nav1('/monday')}}>Workout Plans</span>
+              <span onClick={goToTodaySchedule}>Workout Plans</span>
               <span onClick={()=>{nav1('/nutrafitchat')}}>AI Coach</span>
               <span onClick={()=>{nav1('/Cc')}}>Calorie Counter</span>
              
@@ -290,6 +331,11 @@ useEffect(() => {
 )}
 
       <h1 className="cc-header">Calorie Counter</h1>
+{limitMessages.length > 0 && (
+  <div style={{ color: 'red', marginBottom: '10px', fontWeight: 'bold', fontSize: '16px' ,position: 'relative', left: '600px'}}>
+    {limitMessages.map((msg, i) => <div key={i}>{msg}</div>)}
+  </div>
+)}
 
       <div className="ct-main">
         <div className="ct-top">
@@ -298,14 +344,48 @@ useEffect(() => {
             <div className="ct-img1" style={{ backgroundImage: `url(${proteinImg})` }}><span className="ct-t1" style={{left:"20px"}}>Protein</span></div>
             <div className="ct-img1" style={{ backgroundImage: `url(${fatImg})` }}><span className="ct-t1" style={{left:"20px"}}>Fats</span></div>
 
-            <div className="ct-pb1"><div className="ct-pbo" style={{ backgroundColor: 'rgb(246, 169, 141)' }}><div className="ct-pbi" style={{ backgroundColor: 'orangered', width: getBarWidth(totals.carbs, goal.carbs) }}></div></div></div>
-            <div className="ct-pb1"><div className="ct-pbo" style={{ backgroundColor: 'rgb(143, 143, 255)' }}><div className="ct-pbi" style={{ backgroundColor: 'blue', width: getBarWidth(totals.protein, goal.protein) }}></div></div></div>
-            <div className="ct-pb1"><div className="ct-pbo" style={{ backgroundColor: 'rgb(205, 252, 134)' }}><div className="ct-pbi" style={{ backgroundColor: 'yellowgreen', width: getBarWidth(totals.fats, goal.fats) }}></div></div></div>
+           <div className="ct-pb1">
+  <div className="ct-pbo" style={{ backgroundColor: 'rgba(255, 204, 185, 1)', position: 'relative' }}>
+    <div className="ct-pbi" style={{ backgroundColor: 'orangered', width: getBarWidth(totals.carbs, goal.carbs) }}></div>
+    <span className="ct-bar-label" style={{ backgroundColor: 'orangered'}}>
+      {getMacroLabel(totals.carbs, goal.carbs)}
+    </span>
+  </div>
+</div>
+
+            <div className="ct-pb1">
+  <div className="ct-pbo" style={{ backgroundColor: 'rgba(170, 170, 255, 1)', position: 'relative' }}>
+    <div className="ct-pbi" style={{ backgroundColor: 'blue', width: getBarWidth(totals.protein, goal.protein) }}></div>
+    <span className="ct-bar-label" style={{ backgroundColor: 'blue'}}>
+      {getMacroLabel(totals.protein, goal.protein)}
+    </span>
+  </div>
+</div>
+
+            <div className="ct-pb1">
+  <div className="ct-pbo" style={{ backgroundColor: 'rgba(228, 255, 188, 1)', position: 'relative' }}>
+    <div className="ct-pbi" style={{ backgroundColor: 'yellowgreen', width: getBarWidth(totals.fats, goal.fats) }}></div>
+    <span className="ct-bar-label" style={{ backgroundColor: 'yellowgreen'}}>
+      {getMacroLabel(totals.fats, goal.fats)}
+    </span>
+  </div>
+</div>
+
           </div>
 
           <div className="ct-intop1">
             <div className="ct-img2" style={{ backgroundImage: `url(${caloriImg})` }}></div>
-            <div className="ct-pb2"><div className="ct-pbo1" style={{ backgroundColor: 'rgb(253, 253, 120)' }}><div className="ct-pbi1" style={{ backgroundColor: 'orange', width: getBarWidth(totals.cal, goal.cal) }}><span className="ct-t1">Calories</span></div></div></div>
+            <div className="ct-pb2">
+  <div className="ct-pbo1" style={{ backgroundColor: 'rgba(255, 255, 195, 1)', position: 'relative' }}>
+    <div className="ct-pbi1" style={{ backgroundColor: 'orange', width: getBarWidth(totals.cal, goal.cal) }}>
+      <span className="ct-t1">Calories</span>
+    </div>
+    <span className="ct-bar-label">
+      {getMacroLabel(totals.cal, goal.cal, 'kcal')}
+    </span>
+  </div>
+</div>
+
           </div>
         </div>
 
@@ -372,7 +452,7 @@ useEffect(() => {
             <div className="ct-pb3">
               <div className="ct-img3" style={{ backgroundImage: `url(${[bfImg, lunchImg, dinnerImg][i]})` }}></div>
               <div className="ct-pbo3"><div className="ct-pbi3" style={{
-  backgroundColor: ['#B3E0F4', '#FFC450', '#D85353'][i],
+  backgroundColor: ['#7dd8ffff', '#FFC450', '#D85353'][i],
   width: getBarWidth(
     mealData[['bf', 'lun', 'din'][i]].reduce(
       (sum, item) =>

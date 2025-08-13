@@ -2,7 +2,7 @@ const {UserData}=require('../Model/User.js')
 
 const handleInsertUserData=async(req,res)=>{
     try{
-        const data=req.body;
+        const data=req.body; 
         console.log("data:",data);
         if(!(data.email && data.password)){
             return res.status(400).json({Message:"Missing Fields",Succes:false});

@@ -21,7 +21,7 @@ const SoyaCurry = () => {
       </header>
 
       <section className="hero-pan">
-        <h1>Soya Curry</h1>
+        <h1>SOYA CURRY</h1>
         <p>Here’s a complete breakdown of Soya Curry</p>
         <img src={soyaImg} alt="Soya Curry" />
       </section>

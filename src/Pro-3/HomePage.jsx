@@ -39,6 +39,19 @@ useEffect(() => {
   fetchData();
 }, []);
 
+const goToTodaySchedule = () => {
+  const dayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
+  const dayRoutes = [
+    '/sunday',   // 0
+    '/monday',   // 1
+    '/tuesday',  // 2
+    '/wednesday',// 3
+    '/thursday', // 4
+    '/friday',   // 5
+    '/saturday', // 6
+  ];
+  nav(dayRoutes[dayIndex]);
+};
 
 const handleImageUpload = (e) => {
   const file = e.target.files[0];
@@ -122,7 +135,7 @@ const handleImageUpload = (e) => {
       <nav className="navbar">
         <span onClick={()=>{nav('/home')}}>Home</span>
         <span onClick={()=>{nav('/recMenu')}}>Food Diary</span>
-        <span onClick={()=>{nav('/monday')}}>Workout Plans</span>
+        <span onClick={goToTodaySchedule}>Workout Plans</span>
         <span onClick={()=>{nav('/nutrafitchat')}}>AI Coach</span>
         <span onClick={()=>{nav('/Cc')}}>Calorie Counter</span>
        
@@ -150,7 +163,7 @@ const handleImageUpload = (e) => {
           <h3>🍽 Food Diary</h3>
           <p>Log meals, macros, and smart AI suggestions</p>
         </div>
-        <div className="feature-card" onClick={() => nav('/monday')}>
+        <div className="feature-card" onClick={goToTodaySchedule}>
           <h3>🏋 Workout Plans</h3>
           <p>Quick & efficient workouts tailored to your life</p>
         </div>

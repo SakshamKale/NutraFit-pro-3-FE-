@@ -1,4 +1,5 @@
 import { useState } from 'react';
+ import { useEffect } from 'react';
 import './Schedule.css';
 
 import chest1 from './img/chest1.jpeg';
@@ -121,6 +122,15 @@ const TueMenu = () => {
     localStorage.setItem('selectedData2', JSON.stringify(selected));
     window.location.href = '/tuesday'; // replace with routing if needed
   };
+ 
+
+useEffect(() => {
+  const saved = JSON.parse(localStorage.getItem('selectedData2'));
+  if (saved && Array.isArray(saved)) {
+    setSelected(saved);
+  }
+}, []);
+
 
   return (
     <>

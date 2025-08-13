@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './Schedule.css';
 
 import chest1 from './img/chest1.jpeg';
@@ -102,6 +103,14 @@ const MonMenu = () => {
     updatedInputs[index] = value;
     setCustomInput(updatedInputs);
   };
+
+
+useEffect(() => {
+  const saved = JSON.parse(localStorage.getItem('selectedData1'));
+  if (saved && Array.isArray(saved)) {
+    setSelected(saved);
+  }
+}, []);
 
   const handleAddCustomItem = (sectionIndex) => {
     const inputValue = customInput[sectionIndex].trim();

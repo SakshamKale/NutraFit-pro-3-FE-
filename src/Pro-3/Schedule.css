@@ -368,7 +368,7 @@
 .arrow-button {
   position: absolute;
   right: 8px;
-  top: -12%;
+  top: 25%;
   transform: translateY(-50%);
   background: #3D80FC;
   border: none;

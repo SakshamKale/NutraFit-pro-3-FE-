@@ -1,16 +1,17 @@
-// ChickenParmesan.jsx
 import React from 'react';
-import './PaneerTikka.css';
+import './PaneerTikka.css'; // Shared CSS
 
 import logo from './Screenshot 2025-06-30 221420.jpg';
-import CPImg from './img/CP.jpg'
+import methiChickenImg from '../REC/11.jpeg'; // Add this image
 import { useNavigate } from 'react-router';
 
-const ChickenParmesan = () => {
-  const navigate=useNavigate();
+const MethiChicken = () => {
+  const navigate1 = useNavigate();
   return (
     <div className='body1000'>
+      {/* Header */}
       <header className="header-paneer">
+        <span className="plan-btn" onClick={() => navigate1('/recMenu')}>⮘ Back</span>
         <div className="logo-circle">
           <img src={logo} alt="NutraFit Logo" />
         </div>
@@ -19,93 +20,89 @@ const ChickenParmesan = () => {
         </div>
       </header>
 
-          <span className="plan-btn"  onClick={() => navigate('/recMenu')}>⮘ Back</span> 
-
+      {/* Hero */}
       <section className="hero-pan">
-        <h1>Chicken Parmesan</h1>
-        <p>Here’s a complete breakdown of Chicken Parmesan</p>
-        <img src={CPImg} alt="Chicken Parmesan" />
+        <h1>METHI (FENUGREEK) CHICKEN</h1>
+        <p>A delicious Indian chicken dish cooked with fresh fenugreek leaves and aromatic spices, rich in protein and flavor.</p>
+        <img src={methiChickenImg} alt="Methi Chicken" />
       </section>
 
+      {/* Ingredients Section */}
       <section className="ingredients">
         <h2>Ingredients</h2>
         <div className="content">
           <div className="left">
+            <p><strong>For Methi Chicken:</strong></p>
             <ul>
-              <li>2 boneless chicken breasts</li>
-              <li>1 cup breadcrumbs</li>
-              <li>1/2 cup grated Parmesan cheese</li>
-              <li>1 egg (beaten)</li>
-              <li>1 cup marinara sauce</li>
-              <li>1 cup shredded mozzarella cheese</li>
-              <li>1/2 tsp garlic powder</li>
-              <li>1/2 tsp dried oregano</li>
-              <li>Salt and pepper to taste</li>
-              <li>2 tbsp olive oil</li>
-              <li>Fresh basil leaves (for garnish)</li>
+              <li>200g Boneless chicken, cut into pieces</li>
+              <li>1 cup Fresh fenugreek (methi) leaves, chopped</li>
+              <li>1 medium Onion, finely chopped</li>
+              <li>1 medium Tomato, pureed</li>
+              <li>1 tsp Ginger-garlic paste</li>
+              <li>1/2 tsp Turmeric powder</li>
+              <li>1 tsp Red chili powder</li>
+              <li>1 tsp Coriander powder</li>
+              <li>1 tsp Oil</li>
+              <li>Salt to taste</li>
+              <li>Fresh coriander for garnish</li>
             </ul>
           </div>
           <div className="right">
             <div className="prep-box">
               <h3>Prep Time</h3>
-              <p><strong>15 minutes</strong><br />Preparation</p>
-              <p><strong>25 minutes</strong><br />Cooking Time</p>
-              <p><strong>~40 minutes</strong><br />Total Time</p>
+              <p><strong>10 minutes</strong><br />Preparation</p>
+              <p><strong>15 minutes</strong><br />Cooking Time</p>
+              <p><strong>~25 minutes</strong><br />Total Time</p>
             </div>
             <div className="nutrition-box">
-              <h3>Nutrition Facts <span>(per serving approx.)</span></h3>
-              <p><strong>430 kcal</strong> Calories</p>
-              <p><strong>35g</strong> Protein</p>
-              <p><strong>15g</strong> Carbs</p>
-              <p><strong>24g</strong> Fat</p>
-              <p><strong>2g</strong> Fiber</p>
+              <h3>Nutrition Facts <span>(per serving, approx.)</span></h3>
+              <p><strong>230 kcal</strong> Calories</p>
+              <p><strong>28g</strong> Protein</p>
+              <p><strong>3g</strong> Carbs</p>
+              <p><strong>12g</strong> Fat</p>
+              <p><strong>3g</strong> Fiber</p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* YouTube */}
       <div className="youtube">
         <iframe
           width="100%"
           height="315"
-          src="https://www.youtube.com/embed/8LgA6gsXR7w?si=YDHkWN-AXHseuEug" // Replace with actual Chicken Parmesan recipe video ID
-          title="Chicken Parmesan Recipe"
+          src="https://www.youtube.com/embed/jSFVG-xOs1Q?si=1A7SmNvtia-QhwLP" // Replace with actual video link
+          title="Methi Chicken – Ranveer Brar"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
 
+      {/* Directions */}
       <section className="directions">
         <h2>Directions</h2>
         <div className="steps">
-          <h4>Prepare Chicken</h4>
+          <h4>Prepare Masala</h4>
           <ul>
-            <li>Flatten chicken breasts to even thickness using a mallet.</li>
-            <li>Season with salt, pepper, and garlic powder.</li>
+            <li>Heat oil in a pan. Sauté onions until golden, then add ginger-garlic paste and cook 1–2 mins.</li>
+            <li>Add turmeric, chili powder, coriander powder, and tomato puree. Cook until oil separates.</li>
           </ul>
 
-          <h4>Coat and Cook</h4>
+          <h4>Cook Chicken & Methi</h4>
           <ul>
-            <li>Mix breadcrumbs with Parmesan and oregano.</li>
-            <li>Dip chicken in beaten egg, then coat in breadcrumb mixture.</li>
-            <li>Heat oil in a pan and fry chicken until golden brown on both sides.</li>
+            <li>Add chicken pieces and salt. Cook 10–12 minutes until chicken is tender.</li>
+            <li>Add chopped methi leaves and cook 3–4 minutes until wilted and flavors blend.</li>
           </ul>
 
-          <h4>Bake</h4>
+          <h4>Garnish & Serve</h4>
           <ul>
-            <li>Place fried chicken in a baking dish. Top with marinara sauce and mozzarella.</li>
-            <li>Bake at 180°C (350°F) for 15–20 minutes until cheese is melted and bubbly.</li>
-          </ul>
-
-          <h4>Serve</h4>
-          <ul>
-            <li>Garnish with fresh basil.</li>
-            <li>Serve with spaghetti or a side salad.</li>
+            <li>Garnish with fresh coriander. Serve hot with roti or steamed rice.</li>
           </ul>
         </div>
       </section>
 
+      {/* Footer */}
       <footer>
         <div className="footer-content">
           <div className="brand">
@@ -113,7 +110,7 @@ const ChickenParmesan = () => {
             <p>Nutrition tracking for real life.</p>
           </div>
           <div className="socials">
-            {/* Icons if needed */}
+            {/* Icons can go here if needed */}
           </div>
         </div>
       </footer>
@@ -121,4 +118,4 @@ const ChickenParmesan = () => {
   );
 };
 
-export default ChickenParmesan;
+export default MethiChicken;

@@ -422,3 +422,76 @@ th {
     transform: scale(1);
   }
 }
+
+
+.ct-bar-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+.ct-bar-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #fdfdfd, #f0f0f0);
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+
+.ct-bar-label:hover {
+  background: linear-gradient(135deg, #fff5d7, #ffe5a7);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.ct-bar-label {
+  display: inline-block;
+  padding: 5px 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  letter-spacing: 0.4px;
+
+  transition: all 0.25s ease;
+}
+
+.ct-bar-label:hover {
+  background: #fafafa;
+  border-color: rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.ct-bar-label {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 165, 0, 0.85); /* Default orange for calories */
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.ct-bar-label:hover {
+  background: rgba(255, 165, 0, 1);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.3);
+}

@@ -5,18 +5,18 @@ import { useNavigate } from 'react-router';
 import logo from './Screenshot 2025-06-30 221420.jpg';
 import { useNotifications } from '../context/NotificationContext';
 import userApi2  from './axiosinstance2';
-import vsimg from './img/vegetable-sambar-01.jpg'
-import PTimg from './img/PaneerTikka.jpg'
-import rajmaImg from './img/Rajma.jpg'
+import vsimg from '../REC/1.jpg'
+import PTimg from '../REC/2.jpeg'
+import rajmaImg from '../REC/3.jpeg'
 import soyaImg from './img/Soya.jpg'
-import PBImg from './img/PannerBurji.jpg'
-import KPImg from './img/KadaiPaanner.jpg'
-import CTimg  from './img/CT.jpg'
-import ECImg  from './img/EC.jpg'
-import PrawnsImg from './img/Prawns.jpg';
-import BCImg from './img/BC.jpg'
-import CSimg from './img/CS.jpg'
-import CPImg from './img/CP.jpg'
+import PBImg from '../REC/4.jpeg'
+import KPImg from '../REC/5.jpeg'
+import CTimg  from '../REC/6.jpeg'
+import ECImg  from '../REC/7.jpeg'
+import PrawnsImg from '../REC/8.jpeg';
+import BCImg from '../REC/]9.jpeg';
+import CSimg from '../REC/10.jpeg';
+import CPImg from '../REC/11.jpeg';
 
 
 
@@ -43,7 +43,19 @@ const NutraFitRecipes = () => {
       
         fetchData();
       }, []);
-      
+      const goToTodaySchedule = () => {
+  const dayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
+  const dayRoutes = [
+    '/sunday',   // 0
+    '/monday',   // 1
+    '/tuesday',  // 2
+    '/wednesday',// 3
+    '/thursday', // 4
+    '/friday',   // 5
+    '/saturday', // 6
+  ];
+  nav1000(dayRoutes[dayIndex]);
+};
       
       const handleImageUpload = (e) => {
         const file = e.target.files[0];
@@ -82,7 +94,7 @@ const NutraFitRecipes = () => {
  <nav className="navbar">
         <span onClick={()=>{nav1000('/home')}}>Home</span>
         <span onClick={()=>{nav1000('/recMenu')}}>Food Diary</span>
-        <span onClick={()=>{nav1000('/monday')}}>Workout Plans</span>
+        <span onClick={goToTodaySchedule}>Workout Plans</span>
         <span onClick={()=>{nav1000('/nutrafitchat')}}>AI Coach</span>
         <span onClick={()=>{nav1000('/Cc')}}>Calorie Counter</span>
         
@@ -126,14 +138,14 @@ const NutraFitRecipes = () => {
         <h3>VEG</h3>
         <div className="recipes">
           {[
-            { src: vsimg, label: 'VEGETABLE SAMBAR', path:'/vegsam' },
-            { src: PTimg, label: 'PANEER TIKKA',path:'/pannert' },
-            { src: rajmaImg, label: 'RAJMA',path:'/rajma' },
+            { src: vsimg, label: 'MOONG DAL CHILLA', path:'/vegsam' },
+            { src: PTimg, label: 'RAGI DOSA',path:'/pannert' },
+            { src: rajmaImg, label: 'METHI THEPLA',path:'/rajma' },
             { src: soyaImg, label: 'SOYA CURRY',path:'/soya' },
-            { src: PBImg, label: 'PANEER BHURJI',path:'/PB' },
+            { src: PBImg, label: 'SPROUT SALAD',path:'/PB' },
             {
               src: KPImg,
-              label: 'KADAI PANEER',
+              label: 'VEGETABLE UPMA',
               path:'/KP'
             }
           ].map((item, index) => (
@@ -155,14 +167,14 @@ const NutraFitRecipes = () => {
         <h3>NON VEG</h3>
         <div className="recipes">
           {[
-            { src: CTimg, label: 'CHICKEN TIKKA',path:'/CT' },
-            { src: ECImg, label: 'EGG CURRY',path:'/EC' },
-            { src: PrawnsImg, label: 'PRAWNS',path:'/Praw' },
-            { src:BCImg, label: 'BUTTER CHICKEN',path:'/BC' },
-            { src: CSimg, label: 'CHICKEN SUKKA',path:'/CS' },
+            { src: CTimg, label: 'GINGER CHICKEN',path:'/CT' },
+            { src: ECImg, label: 'GARLIC LEMON FISH',path:'/EC' },
+            { src: PrawnsImg, label: 'GRILLED TANDOORI SALMON',path:'/Praw' },
+            { src:BCImg, label: 'BAKED MASALA FISH',path:'/BC' },
+            { src: CSimg, label: 'PRAWN AND SPINACH CURRY',path:'/CS' },
             {
               src: CPImg,
-              label: 'CHICKEN PARMESAN',path:'/CP'
+              label: 'METHI (FENUGREEK) CHICKEN',path:'/CP'
             }
           ].map((item, index) => (
   <div
