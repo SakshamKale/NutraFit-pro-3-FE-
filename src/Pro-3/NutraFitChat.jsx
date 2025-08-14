@@ -1,4 +1,5 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
 import './NutraFitChat.css';
 import logo from './Screenshot 2025-06-30 221420.jpg';
 import { useNavigate } from 'react-router';
@@ -84,6 +85,11 @@ const goToTodaySchedule = () => {
   ];
   nav2(dayRoutes[dayIndex]);
 };
+const messagesEndRef = useRef(null);
+useEffect(() => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages]);
+
   return (
     <div className="app">
       <header className="header">
@@ -158,6 +164,7 @@ const goToTodaySchedule = () => {
               </div>
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
 
         <div className="input-container">
